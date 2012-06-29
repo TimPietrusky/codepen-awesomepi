@@ -69,11 +69,14 @@ A CodePen user.
 
 #### Example
 
+```javascript
     // Display page "1" of all "owned" pen's of user "TimPietrusky"
-    http://codepen-awesomepi.timpietrusky.com/TimPietrusky/owned
-
-    // Is the same as
     http://codepen-awesomepi.timpietrusky.com/TimPietrusky/owned/1
+
+    // If you don't specify the page, it's automatically set to "1"
+    http://codepen-awesomepi.timpietrusky.com/TimPietrusky/owned
+```
+
 
 ### /picks
 
