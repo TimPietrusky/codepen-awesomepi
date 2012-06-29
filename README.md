@@ -4,17 +4,17 @@ An unofficial API for [CodePen](http://codepen.io) made by a fan.
 
 2012 by http://timpietrusky.com
 
-# API Reference
+## API Reference
 
-## Base URL
+### Base URL
 
     http://codepen-awesomepi.timpietrusky.com/
 
-## /<user>
+### /<user>
 
 A CodePen user.
 
-### Parameters
+#### Parameters
 
 <table>
     <tr>
@@ -22,11 +22,11 @@ A CodePen user.
     </tr>
 </table>
 
-## /picks
+### /picks
 
-## /popular
+### /popular
 
-## /recent
+### /recent
 
 
-# Using the API
+## Using the API
