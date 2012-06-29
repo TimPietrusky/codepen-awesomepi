@@ -69,7 +69,7 @@ A CodePen user.
 
 #### Example
 
-```javascript
+```php
     // Display page "1" of all "owned" pen's of user "TimPietrusky"
     http://codepen-awesomepi.timpietrusky.com/TimPietrusky/owned/1
 
