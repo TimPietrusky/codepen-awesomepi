@@ -1,0 +1,17 @@
+## Compress
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+## Rewrite
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    ## Root path
+    RewriteBase /
+
+    ## Root everything to Index-Controller QSA = Query String Append
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
