@@ -3,16 +3,35 @@
 An unofficial API for [CodePen](http://codepen.io) made by a fan.
 
 The API just parses the requested CodePen page with the [PHP Simple HTML DOM Parser](http://sourceforge.net/projects/simplehtmldom/)
-and returns JSON-encoded objects (content-type: application/json).
+and returns JSON.
 
 2012 by http://timpietrusky.com
 
 
-## API Reference
+## Basics
 
 ### Base URL
 
     http://codepen-awesomepi.timpietrusky.com
+
+### Response
+
+The response is JSON-encode (content-type: application/json).
+
+If you want to use the response within JavaScript you can append `jsonp` as a callback.
+
+#### JSONP example in jQuery
+
+```javascript
+$.ajax({
+    dataType: 'jsonp',
+    jsonp: 'jsonp',
+    url: 'http://www.interaktionsdesigner.de/stuff/json.php',
+    success: function (data) {
+        alert(data);
+    }
+});
+```
 
 ### Error handling
 
@@ -29,9 +48,11 @@ If the request is invalid you will get an error:
 ```
 
 
+## API Reference
+
 ### /&lt;user&gt;
 
-A CodePen user.
+A CodePen users owned or loved pens.
 
 #### Method
 
@@ -104,9 +125,25 @@ A CodePen user.
 
 ### /picks
 
+Editor's Picks.
+
+#### Method
+#### Parameters
+#### Example
+
+
 ### /popular
 
+#### Method
+#### Parameters
+#### Example
+
+
 ### /recent
+
+#### Method
+#### Parameters
+#### Example
 
 
 ## Using the API
