@@ -2,7 +2,11 @@
 
 An unofficial API for [CodePen](http://codepen.io) made by a fan.
 
+The API just parses the requested CodePen page with the [PHP Simple HTML DOM Parser](http://sourceforge.net/projects/simplehtmldom/)
+and returns JSON-encoded objects (content-type: application/json).
+
 2012 by http://timpietrusky.com
+
 
 ## API Reference
 
@@ -75,6 +79,27 @@ A CodePen user.
     // If you don't specify the page, it's automatically set to "1"
     http://codepen-awesomepi.timpietrusky.com/TimPietrusky/owned
 
+```javascript
+{
+    "status": {
+        "code":0,
+        "message":"ok"
+    },
+    "content": {
+        "pens": [
+            {
+                "title":"jasonx3000",
+                "description":"visual vomit caused by stupid CSS trolling - or like I would say: jasonx3000...",
+                "views":486,
+                "hearts":2,
+                "url": {
+                    "pen":"http:\/\/codepen.io\/TimPietrusky\/pen\/jasonx3000\/2",
+                    "fullgrid":"http:\/\/codepen.io\/TimPietrusky\/fullgrid\/jasonx3000\/2"}
+                }
+            }
+        ]
+    }
+}
 
 ### /picks
 
