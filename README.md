@@ -10,7 +10,7 @@ An unofficial API for [CodePen](http://codepen.io) made by a fan.
 
     http://codepen-awesomepi.timpietrusky.com/
 
-### /<user>
+### /&lt;user&gt;
 
 A CodePen user.
 
