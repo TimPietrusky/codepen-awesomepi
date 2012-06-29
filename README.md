@@ -26,7 +26,7 @@ If you want to use the response within JavaScript you can append `jsonp` as a ca
 $.ajax({
     dataType: 'jsonp',
     jsonp: 'jsonp',
-    url: 'http://www.interaktionsdesigner.de/stuff/json.php',
+    url: 'http://codepen-awesomepi.local/picks',
     success: function (data) {
         alert(data);
     }
