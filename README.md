@@ -100,6 +100,7 @@ A CodePen user.
         ]
     }
 }
+```
 
 ### /picks
 
