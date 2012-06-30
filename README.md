@@ -99,9 +99,11 @@ A CodePen users owned or loved pens.
 #### Example
 
 Display page "1" of all "owned" pen's of user "TimPietrusky"
+
     http://codepen-awesomepi.timpietrusky.com/TimPietrusky/owned/1
 
 If you don't specify the page, it's automatically set to "1"
+
     http://codepen-awesomepi.timpietrusky.com/TimPietrusky/owned
 
 ```javascript
@@ -160,6 +162,7 @@ Editor's Picks.
 #### Example
 
 Display page "2" of Editor's Picks
+
     http://codepen-awesomepi.timpietrusky.com/picks/2
 
 ```javascript
