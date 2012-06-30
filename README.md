@@ -2,7 +2,7 @@
 
 An unofficial API for [CodePen](http://codepen.io) made by a fan.
 
-The API just parses the requested CodePen page with the [PHP Simple HTML DOM Parser](http://sourceforge.net/projects/simplehtmldom/)
+This simple API parses the requested CodePen page with the [PHP Simple HTML DOM Parser](http://sourceforge.net/projects/simplehtmldom/)
 and returns JSON.
 
 2012 by http://timpietrusky.com
@@ -16,7 +16,7 @@ and returns JSON.
 
 ### Response
 
-The response is JSON-encode (content-type: application/json).
+The response is JSON-encoded (content-type: application/json).
 
 If you want to use the response within JavaScript you can append `jsonp` as a callback.
 
@@ -33,6 +33,10 @@ $.ajax({
 });
 ```
 
+### Null values
+
+If the value of a field is not specified, it will get the value `null`.
+
 ### Error handling
 
 If the request is invalid you will get an error:
@@ -44,7 +48,7 @@ If the request is invalid you will get an error:
         "message":"invalid"
     },
     "content":null
-}
+};
 ```
 
 
@@ -120,30 +124,129 @@ A CodePen users owned or loved pens.
             }
         ]
     }
-}
+};
+
+/* Note: Output was shortened. */
 ```
+
+
 
 ### /picks
 
 Editor's Picks.
 
 #### Method
+
+    http://codepen-awesomepi.timpietrusky.com/picks/{page}
+
 #### Parameters
+
+<table>
+    <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Required</th>
+    </tr>
+
+    <tr>
+        <td>page</td>
+        <td>Number</td>
+        <td>The page to show</td>
+        <td>No</td>
+    </tr>
+</table>
+
 #### Example
+
+    // Display page "2" of Editor's Picks
+    http://codepen-awesomepi.timpietrusky.com/picks/2
+
+```javascript
+{
+    "status": {
+        "code":0,
+        "message":"ok"
+    },
+    "content": {
+        "pens": [
+            {
+                "title":"CSS Button",
+                "description":null,
+                "views":387,
+                "hearts":8,
+                "url": {
+                    "pen":"http:\/\/codepen.io\/bryanZavestoski\/pen\/7\/3",
+                    "fullgrid":"http:\/\/codepen.io\/bryanZavestoski\/fullgrid\/7\/3"
+                },
+                "user": {
+                    "nickname":"bryanZavestoski",
+                    "realname":"Bryan Zavestoski",
+                    "gravatar":"https:\/\/secure.gravatar.com\/avatar\/b50d4eef24b224d4e054346614c72832?d=https:\/\/a248.e.akamai.net\/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png"
+                }
+            }
+        ]
+    }
+};
+
+/* Note: Output was shortened. */
+```
 
 
 ### /popular
 
+The most popular pens.
+
 #### Method
+
+    http://codepen-awesomepi.timpietrusky.com/popular/{page}
+
 #### Parameters
+
+<table>
+    <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Required</th>
+    </tr>
+
+    <tr>
+        <td>page</td>
+        <td>Number</td>
+        <td>The page to show</td>
+        <td>No</td>
+    </tr>
+</table>
+
 #### Example
+
 
 
 ### /recent
 
+Recently added pens.
+
 #### Method
+
+    http://codepen-awesomepi.timpietrusky.com/recent/{page}
+
 #### Parameters
+
+<table>
+    <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Required</th>
+    </tr>
+
+    <tr>
+        <td>page</td>
+        <td>Number</td>
+        <td>The page to show</td>
+        <td>No</td>
+    </tr>
+</table>
+
 #### Example
-
-
-## Using the API
