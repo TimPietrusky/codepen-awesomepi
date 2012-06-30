@@ -221,6 +221,35 @@ The most popular pens.
 
 #### Example
 
+```javascript
+{
+    "status": {
+        "code":0,
+        "message":"ok"
+    },
+    "content": {
+        "pens": [
+            {
+                "title":"CSS3 iPhone v0.1",
+                "description":"CSS3 iPhone v0.1 by Dylan Hudson (@dyln_hdsn on twitter)",
+                "views":77500,
+                "hearts":77,
+                "url": {
+                    "pen":"http:\/\/codepen.io\/dylnhdsn\/pen\/iphone\/23",
+                    "fullgrid":"http:\/\/codepen.io\/dylnhdsn\/fullgrid\/iphone\/23"
+                },
+                "user": {
+                    "nickname":"dylnhdsn",
+                    "realname":"dylnhdsn",
+                    "gravatar":"https:\/\/secure.gravatar.com\/avatar\/2e6377be71ded525989c6c101ddf133a?d=https:\/\/a248.e.akamai.net\/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png"
+                }
+            }
+        ]
+    }
+};
+
+/* Note: Output was shortened. */
+```
 
 
 ### /recent
@@ -250,3 +279,33 @@ Recently added pens.
 </table>
 
 #### Example
+
+```javascript
+{
+    "status": {
+        "code":0,
+        "message":"ok"
+    },
+    "content": {
+        "pens": [
+            {
+                "title":null,
+                "description":null,
+                "views":1,
+                "hearts":"",
+                "url": {
+                    "pen":"http:\/\/codepen.io\/chrisxclash\/pen\/4\/1",
+                    "fullgrid":"http:\/\/codepen.io\/chrisxclash\/fullgrid\/4\/1"
+                },
+                "user": {
+                    "nickname":"chrisxclash",
+                    "realname":"chrisxclash",
+                    "gravatar":"https:\/\/secure.gravatar.com\/avatar\/6d0056af25ebcda49d4e38c6985e6cb1?d=https:\/\/a248.e.akamai.net\/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png"
+                }
+            }
+        ]
+    }
+};
+
+/* Note: Output was shortened. */
+```
