@@ -98,7 +98,7 @@ A CodePen users owned or loved pens.
 
 #### Example
 
-Display page "1" of all "owned" pen's of user "TimPietrusky"
+Display page "1" of all "owned" pens of user "TimPietrusky"
 
     http://codepen-awesomepi.timpietrusky.com/TimPietrusky/owned/1
 
