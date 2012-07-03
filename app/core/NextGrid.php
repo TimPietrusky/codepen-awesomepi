@@ -84,6 +84,9 @@ class NextGrid {
                 // URL - pen
                 $this->output['pens'][$i]['url']['pen'] = $this->getValue($pens[$i], 'a[class="cover-link"]', NextGrid::VALUE_TYPE_ATTRIBUTE, 'href');
 
+                // URL - full
+                $this->output['pens'][$i]['url']['full'] = str_replace('fullgrid', 'full', $this->getValue($pens[$i], 'iframe[data-src]', NextGrid::VALUE_TYPE_ATTRIBUTE, 'data-src'));
+
                 // URL - fullgrid
                 $this->output['pens'][$i]['url']['fullgrid'] = $this->getValue($pens[$i], 'iframe[data-src]', NextGrid::VALUE_TYPE_ATTRIBUTE, 'data-src');
 
