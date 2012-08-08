@@ -51,6 +51,37 @@ If the request is invalid you will get an error:
 };
 ```
 
+### URL explanation
+
+Why are there four URLs?
+
+<table>
+    <tr>
+        <th>URL</th>
+        <th>Description</th>
+    </tr>
+    
+    <tr>
+        <td>pen</td>
+        <td>Code split view: Above is the source code (HTML, CSS, JS) and below is the CodePen</td>
+    </tr>
+    
+    <tr>
+        <td>details</td>
+        <td>Details split view: Above are details, stats, lovers and comments and below is the CodePen</td>
+    </tr>
+    
+    <tr>
+        <td>full</td>
+        <td>The CodePen is shown fullpage</td>
+    </tr>
+    
+    <tr>
+        <td>fullgrid</td>
+        <td>The CodePen is shown fullpage, but all interactive stuff e.g. CSS3 animation or requestAnimationFrame is stopped after 5 seconds</td>
+    </tr>
+</table>
+
 
 ## API Reference
 
@@ -115,13 +146,16 @@ If you don't specify the page, it's automatically set to "1"
     "content": {
         "pens": [
             {
-                "title":"jasonx3000",
-                "description":"visual vomit caused by stupid CSS trolling - or like I would say: jasonx3000...",
-                "views":486,
-                "hearts":2,
+                "title":"Breaking Bad",
+                "description":"A tribute to the best fucking series in the world. ",
+                "views":75218,
+                "hearts":100,
+                "comments":32,
                 "url": {
-                    "pen":"http:\/\/codepen.io\/TimPietrusky\/pen\/jasonx3000\/2",
-                    "fullgrid":"http:\/\/codepen.io\/TimPietrusky\/fullgrid\/jasonx3000\/2"}
+                    "pen":"http:\/\/codepen.io\/TimPietrusky\/pen\/Bsegb",
+                    "details":"http:\/\/codepen.io\/TimPietrusky\/details\/Bsegb",
+                    "full":"http:\/\/codepen.io\/TimPietrusky\/full\/Bsegb",
+                    "fullgrid":"http:\/\/codepen.io\/TimPietrusky\/fullgrid\/Bsegb"
                 }
             }
         ]
@@ -174,18 +208,21 @@ Display page "2" of Editor's Picks
     "content": {
         "pens": [
             {
-                "title":"CSS Button",
-                "description":null,
-                "views":387,
-                "hearts":8,
+                "title":"CSS Dribbble invite request",
+                "description":"Pure CSS Dribbble logo. Pure CSS loader. Pure CSS animations. Pure CSS refle...",
+                "views":320,
+                "hearts":9,
+                "comments":7,
                 "url": {
-                    "pen":"http:\/\/codepen.io\/bryanZavestoski\/pen\/7\/3",
-                    "fullgrid":"http:\/\/codepen.io\/bryanZavestoski\/fullgrid\/7\/3"
+                    "pen":"http:\/\/codepen.io\/HugoGiraudel\/pen\/FBbDd",
+                    "details":"http:\/\/codepen.io\/HugoGiraudel\/details\/FBbDd",
+                    "full":"http:\/\/codepen.io\/HugoGiraudel\/full\/FBbDd",
+                    "fullgrid":"http:\/\/codepen.io\/HugoGiraudel\/fullgrid\/FBbDd"
                 },
                 "user": {
-                    "nickname":"bryanZavestoski",
-                    "realname":"Bryan Zavestoski",
-                    "gravatar":"https:\/\/secure.gravatar.com\/avatar\/b50d4eef24b224d4e054346614c72832?d=https:\/\/a248.e.akamai.net\/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png"
+                    "nickname":"HugoGiraudel",
+                    "realname":"Hugo Giraudel",
+                    "gravatar":"https:\/\/secure.gravatar.com\/avatar\/729edf889ced7863dedba95452272bca?d=https:\/\/a248.e.akamai.net\/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png"
                 }
             }
         ]
@@ -237,9 +274,12 @@ The most popular pens.
                 "description":"CSS3 iPhone v0.1 by Dylan Hudson (@dyln_hdsn on twitter)",
                 "views":77500,
                 "hearts":77,
+                "comments":20,
                 "url": {
-                    "pen":"http:\/\/codepen.io\/dylnhdsn\/pen\/iphone\/23",
-                    "fullgrid":"http:\/\/codepen.io\/dylnhdsn\/fullgrid\/iphone\/23"
+                    "pen":"http:\/\/codepen.io\/dylnhdsn\/pen\/pheJs",
+                    "details":"http:\/\/codepen.io\/dylnhdsn\/details\/pheJs",
+                    "full":"http:\/\/codepen.io\/dylnhdsn\/full\/pheJs",
+                    "fullgrid":"http:\/\/codepen.io\/dylnhdsn\/fullgrid\/pheJs"
                 },
                 "user": {
                     "nickname":"dylnhdsn",
@@ -296,9 +336,12 @@ Recently added pens.
                 "description":null,
                 "views":1,
                 "hearts":"",
+                "comments":0,
                 "url": {
-                    "pen":"http:\/\/codepen.io\/chrisxclash\/pen\/4\/1",
-                    "fullgrid":"http:\/\/codepen.io\/chrisxclash\/fullgrid\/4\/1"
+                    "pen":"http:\/\/codepen.io\/chrisxclash\/pen\/mzoHt",
+                    "details":"http:\/\/codepen.io\/chrisxclash\/details\/mzoHt",
+                    "full":"http:\/\/codepen.io\/chrisxclash\/full\/mzoHt",
+                    "fullgrid":"http:\/\/codepen.io\/chrisxclash\/fullgrid\/mzoHt"
                 },
                 "user": {
                     "nickname":"chrisxclash",
