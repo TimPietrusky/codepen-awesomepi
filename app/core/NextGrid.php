@@ -80,16 +80,25 @@ class NextGrid {
 
                 // Hearts
                 $this->output['pens'][$i]['hearts'] = $this->getValue($pens[$i], 'span[class="count"]', NextGrid::VALUE_TYPE_PLAINTEXT);
+                
+                // Comments
+                $this->output['pens'][$i]['comments'] = $this->getValue($pens[$i], 'a[class="comments"]', NextGrid::VALUE_TYPE_PLAINTEXT);
 
                 // URL - pen
                 $this->output['pens'][$i]['url']['pen'] = $this->getValue($pens[$i], 'a[class="cover-link"]', NextGrid::VALUE_TYPE_ATTRIBUTE, 'href');
 
+                // URL - details
+                $this->output['pens'][$i]['url']['details'] = $this->getValue($pens[$i], 'a[class="comments"]', NextGrid::VALUE_TYPE_ATTRIBUTE, 'href');
+                
                 // URL - full
-                $this->output['pens'][$i]['url']['full'] = str_replace('fullgrid', 'full', $this->getValue($pens[$i], 'iframe[data-src]', NextGrid::VALUE_TYPE_ATTRIBUTE, 'data-src'));
+                $url_full = $this->getValue($pens[$i], 'iframe[data-src]', NextGrid::VALUE_TYPE_ATTRIBUTE, 'data-src');
+                $this->output['pens'][$i]['url']['full'] = $this->processUrl($url_full, array('fullgrid'), array('full'));
 
                 // URL - fullgrid
-                $this->output['pens'][$i]['url']['fullgrid'] = $this->getValue($pens[$i], 'iframe[data-src]', NextGrid::VALUE_TYPE_ATTRIBUTE, 'data-src');
+                $url_fullgrid = $this->getValue($pens[$i], 'iframe[data-src]', NextGrid::VALUE_TYPE_ATTRIBUTE, 'data-src');
+                $this->output['pens'][$i]['url']['fullgrid'] = $this->processUrl($url_full);
 
+                
                 /*
                  * home/* & user/love
                  */
@@ -112,7 +121,7 @@ class NextGrid {
                 }
             }
         }
-
+        
         return $this->output;
     }
 
@@ -179,5 +188,24 @@ class NextGrid {
         }
 
         return $value;
+    }
+    
+    /**
+     * Process the given <CODE>$url</CODE> so that it looks cute. 
+     * 
+     * @param String $url
+     * @param mixed $search
+     * @param mixed $replace
+     * 
+     * @return String $url
+     */
+    protected function processUrl($url, $search = null, $replace = null) {
+        if ($search != null && $replace != null) {
+            $url = str_replace($search, $replace, $url);
+        }
+        
+        $url = str_replace('secure.', '', $url);
+        
+        return $url;
     }
 }
