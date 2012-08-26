@@ -15,7 +15,7 @@ final class Config {
         'codepen' => 'http://codepen.io',
 
         'request_a' => 'picks|popular|recent',
-        'request_b_user' => 'owned|love',
+        'request_b_user' => 'owned|love|forked',
 
         // Request types
         'type_user' => 'user',
