@@ -28,7 +28,7 @@ class NextGrid {
         // user
         if (Master::$Request->getA() == Config::getConfig()->type_user) {
             $user_destination = $this->getUserDestination();
-            $url = Config::getConfig()->codepen . "/$A/next_grid?type=$user_destination&page=$page&size=small";
+            $url = Config::getConfig()->codepen . "/$A/next_grid?type=$user_destination&page=$page&size=large";
         // home
         } else {
             $type = Master::$Request->getResourcePart(1);
