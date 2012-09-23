@@ -75,8 +75,9 @@ class Request {
 
             // 'user'
             if ($this->getA() == $type_user) {
-                // It's invalid cause 'user' needs B
-                $this->valid = false;
+                // B is not set, so show the default "owned" #8
+                $this->B = 'owned';
+                $this->valid = true;
             }
 
             // 'home'

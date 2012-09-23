@@ -41,15 +41,27 @@ class NextGrid {
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        
+        // Timeout after 5 seconds
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
 
         $content_json = curl_exec($ch);
         curl_close($ch);
 
         // Decode the delivered JSON
         $output = json_decode($content_json, true);
-
-        // Create a DOM object from a string
-        $this->html = str_get_html($output['html']);
+        
+        if (isset($output['html'])) {
+            // Create a DOM object from a string
+            $this->html = str_get_html($output['html']);
+        } else {
+            // Error
+            
+            // @TODO: Add a custom error
+            Master::$Response->error();
+            Master::$Response->getOutput();
+            die();
+        }
     }
 
     /**
