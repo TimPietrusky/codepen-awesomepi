@@ -63,10 +63,6 @@ class Pen {
                 }
 
                 $this->addUrls();
-
-                echo "<pre>";
-                print_r($this->output);
-                die("</pre>");
             }
         } else {
             // Error
