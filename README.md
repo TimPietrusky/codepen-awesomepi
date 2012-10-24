@@ -20,6 +20,22 @@ The response is JSON-encoded (content-type: application/json).
 
 If you want to use the response within JavaScript you can append `jsonp` as a callback.
 
+### pentizr.js
+
+Get your CodePens onto your website with [pentizr.js](https://github.com/TimPietrusky/pentizr).
+
+```javascript
+    $(function() {
+        $('.my-pens').pentizr({username: 'TimPietrusky'});
+    });
+```
+
+```html
+<body>
+    <div class="my-pens"></div>
+</body>
+```
+
 #### JSONP example in jQuery
 
 ```javascript
@@ -33,21 +49,6 @@ $.ajax({
 });
 ```
 
-### pentizr.js
-
-Get your CodePens onto your website with [pentizr.js](https://github.com/TimPietrusky/pentizr).
-
-```javascript
-    $(function() {
-        $('.my-pens').pentizr({username: 'TimPietrusky'});
-    });
-```j
-
-```html
-<body>
-    <div class="my-pens"></div>
-</body>
-```
 
 ### Null values
 
