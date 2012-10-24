@@ -230,6 +230,10 @@ A specific CodePen for a specific user.
 
 #### Example
 
+Get the source of the pen **WebPlatform.org logo** and the configuration stuff (e.g. prefix-free or SASS enabled). 
+
+    http://codepen-awesomepi.timpietrusky.com/TimPietrusky/pen/fCejn
+
 ```javascript
 {
    "status":{
