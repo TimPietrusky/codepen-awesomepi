@@ -187,7 +187,7 @@ If you don't specify the page, it's automatically set to "1"
 /* Note: Output was shortened. */
 ```
 
-### /&lt;user&gt;pen
+### /&lt;user&gt;/pen
 
 A specific CodePen for a specific user. 
 
