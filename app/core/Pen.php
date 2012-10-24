@@ -15,9 +15,10 @@ include_once('simplehtmldom/simple_html_dom.php');
 class Pen {
     protected $output;
     protected $html;
+    protected $username;
 
     function __construct() {
-        $A = Master::$Request->getA(true);
+        $A = $this->username = Master::$Request->getA(true);
         $B = Master::$Request->getB(true);
         $C = Master::$Request->getC(true);
         $url = "";
@@ -115,16 +116,16 @@ class Pen {
         $C = Master::$Request->getC(true);
         
         // URL - pen
-        $this->output['pen']['url']['pen'] = Config::getConfig()->codepen . "/pen/$C";
+        $this->output['pen']['url']['pen'] = Config::getConfig()->codepen . "/$this->username/pen/$C";
 
         // URL - details
-        $this->output['pen']['url']['details'] = Config::getConfig()->codepen . "/details/$C";
+        $this->output['pen']['url']['details'] = Config::getConfig()->codepen . "/$this->username/details/$C";
         
         // URL - full
-        $this->output['pen']['url']['full'] = Config::getConfig()->codepen . "/full/$C";
+        $this->output['pen']['url']['full'] = Config::getConfig()->codepen . "/$this->username/full/$C";
 
         // URL - fullgrid
-        $this->output['pen']['url']['fullgrid'] = Config::getConfig()->codepen . "/fullgrid/$C";
+        $this->output['pen']['url']['fullgrid'] = Config::getConfig()->codepen . "/$this->username/fullgrid/$C";
     }
 }
 
