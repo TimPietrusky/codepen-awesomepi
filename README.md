@@ -276,7 +276,7 @@ Get the source of the pen **WebPlatform.org logo** and the configuration stuff (
       ]
    }
 }
-```j
+```
 
 ### /picks
 
