@@ -263,10 +263,10 @@ Get the source of the pen **WebPlatform.org logo** and the configuration stuff (
          "title":"WebPlatform.org logo",
          "updated_at":"2012-10-10T06:59:08Z",
          "url":{
-            "pen":"http:\/\/codepen.io\/pen\/fCejn",
-            "details":"http:\/\/codepen.io\/details\/fCejn",
-            "full":"http:\/\/codepen.io\/full\/fCejn",
-            "fullgrid":"http:\/\/codepen.io\/fullgrid\/fCejn"
+            "pen":"http:\/\/codepen.io\/TimPietrusky\/pen\/fCejn",
+            "details":"http:\/\/codepen.io\/TimPietrusky\/details\/fCejn",
+            "full":"http:\/\/codepen.io\/TimPietrusky\/full\/fCejn",
+            "fullgrid":"http:\/\/codepen.io\/TimPietrusky\/fullgrid\/fCejn"
          }
       },
       "tags":[
