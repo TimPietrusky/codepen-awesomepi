@@ -25,14 +25,14 @@ If you want to use the response within JavaScript you can append `jsonp` as a ca
 Get your CodePens onto your website with [pentizr.js](https://github.com/TimPietrusky/pentizr).
 
 ```javascript
-    $(function() {
-        $('.my-pens').pentizr({username: 'TimPietrusky'});
-    });
+$(function() {
+  $('.my-pens').pentizr({username: 'TimPietrusky'});
+});
 ```
 
 ```html
 <body>
-    <div class="my-pens"></div>
+  <div class="my-pens"></div>
 </body>
 ```
 
