@@ -33,6 +33,22 @@ $.ajax({
 });
 ```
 
+### pentizr.js
+
+Get your CodePens onto your website with [pentizr.js](https://github.com/TimPietrusky/pentizr).
+
+```javascript
+    $(function() {
+        $('.my-pens').pentizr({username: 'TimPietrusky'});
+    });
+```j
+
+```html
+<body>
+    <div class="my-pens"></div>
+</body>
+```
+
 ### Null values
 
 If the value of a field is not specified, it will get the value `null`.
