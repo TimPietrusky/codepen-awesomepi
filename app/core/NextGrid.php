@@ -1,6 +1,6 @@
 <?php
 
-include('simplehtmldom/simple_html_dom.php');
+include_once('simplehtmldom/simple_html_dom.php');
 
 /**
  * Gets the content from CodePen,
@@ -36,7 +36,7 @@ class NextGrid {
         }
 
         // Get JSON from CodePen
-        $ch = curl_init();
+        $ch = curl_init(); 
 
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -115,7 +115,8 @@ class NextGrid {
                  * home/* & user/love
                  */
                 if (Master::$Request->getA() == Config::getConfig()->type_home ||
-                    Master::$Request->getB() == 'love') {
+                    Master::$Request->getB() == 'love' ||
+                    Master::$Request->getB() == 'loved') {
 
                     // User - name
                     $this->output['pens'][$i]['user']['nickname'] = substr($this->getValue($pens[$i], 'div[class="user"] a', NextGrid::VALUE_TYPE_ATTRIBUTE, 'href'), 1);
@@ -148,6 +149,10 @@ class NextGrid {
     }
 
     public function getUserDestination() {
+        if (Master::$Request->getResourcePart(2) == 'love') {
+            return 'loved';
+        }
+        
         return Master::$Request->getResourcePart(2);
     }
 

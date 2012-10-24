@@ -56,7 +56,7 @@ class Request {
         if ($this->A != $type_none && !is_null($this->getB())) {
             // A is a username
             if ($this->getA() == $type_user) {
-                // B is one of the following: owned|love
+                // B is one of the following: owned|love|details
                 if (in_array($this->getB(), explode("|", Config::getConfig()->request_b_user))) {
                     $this->B = $this->getB();
                 } else {
@@ -93,6 +93,10 @@ class Request {
             if (strval(intval($this->getC())) === strval($this->getC())) {
                 $this->C = $this->getC();
 
+            // C is a CodePen  
+            } else if (strlen($this->getC()) == 5) {
+                $this->C = $this->getC();
+
             // C is invalid
             } else {
                 $this->C = $type_none;
@@ -104,8 +108,14 @@ class Request {
 
             // 'user'
             if ($this->getA() == $type_user) {
-                // Set a default value
-                $this->C = 1;
+
+                if ($this->getB() == 'pen') {
+                    // @TODO [TimPietrusky] - Add a custom error
+                    $this->valid = false;
+                } else {
+                    // Set a default value
+                    $this->C = 1;
+                }
             }
         }
 
@@ -115,24 +125,24 @@ class Request {
         }
     }
 
-    public function getA() {
-        if (isset($this->A)) {
+    public function getA($raw = false) {
+        if (isset($this->A) && !$raw) {
             return $this->A;
         } else {
             return $this->getResourcePart(1);
         }
     }
 
-    public function getB() {
-        if (isset($this->B)) {
+    public function getB($raw = false) {
+        if (isset($this->B) && !$raw) {
             return $this->B;
         } else {
             return $this->getResourcePart(2);
         }
     }
 
-    public function getC() {
-        if (isset($this->C)) {
+    public function getC($raw = false) {
+        if (isset($this->C) && !$raw) {
             return $this->C;
         } else {
             return $this->getResourcePart(3);

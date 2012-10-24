@@ -55,6 +55,7 @@ class Master {
     protected static function auto_include() {
         $includes = array(
             'NextGrid',
+            'Pen',
             'Request',
             'Response',
             'Config'
@@ -77,8 +78,15 @@ class Master {
             // user
             case 'user':
                 if (self::$Request->isValid()) {
-                    $NextGrid = new NextGrid();
-                    self::$Response->setResponse($NextGrid->getOutput());
+
+                    if (in_array(self::$Request->getB(), explode("|", Config::getConfig()->request_b_specific))) {
+                        $Pen = new Pen();
+                        self::$Response->setResponse($Pen->getOutput());
+                    } else {
+                        $NextGrid = new NextGrid();
+                        self::$Response->setResponse($NextGrid->getOutput());
+                    }
+
                     break;
                 } else {
                     self::$Response->error();

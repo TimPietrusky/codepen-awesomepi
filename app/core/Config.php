@@ -15,12 +15,15 @@ final class Config {
         'codepen' => 'http://codepen.io',
 
         'request_a' => 'picks|popular|recent',
-        'request_b_user' => 'owned|love|forked',
+        'request_b_user' => 'owned|love|loved|forked|pen|details',
+        'request_b_specific' => 'pen|details',
 
         // Request types
         'type_user' => 'user',
         'type_home' => 'home',
         'type_none' => 'none',
+        'type_pen'  => 'pen',
+        'type_details' => 'details',
 
         // Response codes & messages
         'response_status_success' => 0,
