@@ -81,6 +81,12 @@ class NextGrid {
                 /*
                  * user
                  */
+                // Hash
+                $url = $this->getValue($pens[$i], 'a[class="cover-link"]', NextGrid::VALUE_TYPE_ATTRIBUTE, 'href');
+                $path = parse_url($url, PHP_URL_PATH);
+                $segment = end(explode('/', rtrim($path, '/')));
+                $this->output['pens'][$i]['hash'] = $segment;
+
                 // Title
                 $this->output['pens'][$i]['title'] = $this->getValue($pens[$i], 'div[class="meta-overlay"] h2', NextGrid::VALUE_TYPE_PLAINTEXT);
 
