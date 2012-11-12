@@ -91,7 +91,7 @@ class NextGrid {
                 $this->output['pens'][$i]['title'] = $this->getValue($pens[$i], 'div[class="meta-overlay"] h2', NextGrid::VALUE_TYPE_PLAINTEXT);
 
                 // Description
-                $this->output['pens'][$i]['description'] = $this->getValue($pens[$i], 'div[class="meta-overlay] p', NextGrid::VALUE_TYPE_PLAINTEXT);
+                $this->output['pens'][$i]['description'] = $this->getValue($pens[$i], 'div[class="meta-overlay] p', NextGrid::VALUE_TYPE_PLAINTEXT, '', 1);
 
                 // Views
                 $this->output['pens'][$i]['views'] = $this->getValue($pens[$i], 'a[class="views"]', NextGrid::VALUE_TYPE_PLAINTEXT);
@@ -183,20 +183,21 @@ class NextGrid {
      * @param String $toFind
      * @param String $type
      * @param String $attribute
+     * @param Integer $index
      *
      * @return mixed $value
      */
-    protected function getValue($pen, $toFind, $type, $attribute = "") {
+    protected function getValue($pen, $toFind, $type, $attribute = "", $index = 0) {
         $value = $pen->find($toFind);
 
         // Value is not null
-        if (isset($value[0])) {
+        if (isset($value[$index])) {
             if ($type == NextGrid::VALUE_TYPE_ATTRIBUTE) {
-                $value = $value[0]->getAttribute($attribute);
+                $value = $value[$index]->getAttribute($attribute);
             }
 
             if ($type == NextGrid::VALUE_TYPE_PLAINTEXT) {
-                $value = $value[0]->plaintext;
+                $value = $value[$index]->plaintext;
             }
 
             $value = trim($value);
