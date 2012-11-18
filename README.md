@@ -135,9 +135,10 @@ CodePens for a specific user.
                 <li>owned</li>
                 <li>loved</li>
                 <li>forked</li>
+                <li>pen</li>
             </ul>
         </td>
-        <td>Yes</td>
+        <td>No</td>
     </tr>
 
     <tr>
@@ -169,7 +170,6 @@ If you don't specify the page, it's automatically set to "1"
     "content": {
         "pens": [
             {
-                "hash":"Bsegb",
                 "title":"Breaking Bad",
                 "description":"A tribute to the best fucking series in the world. ",
                 "views":75218,
@@ -180,7 +180,8 @@ If you don't specify the page, it's automatically set to "1"
                     "details":"http:\/\/codepen.io\/TimPietrusky\/details\/Bsegb",
                     "full":"http:\/\/codepen.io\/TimPietrusky\/full\/Bsegb",
                     "fullgrid":"http:\/\/codepen.io\/TimPietrusky\/fullgrid\/Bsegb"
-                }
+                },
+                "hash":"Bsegb"
             }
         ]
     }
@@ -261,7 +262,7 @@ Get the source of the pen **WebPlatform.org logo** and the configuration stuff (
          "js_modernizr":false,
          "js_pre_processor":"none",
          "private":null,
-         "slug_hash":"fCejn",
+         "hash":"fCejn",
          "title":"WebPlatform.org logo",
          "updated_at":"2012-10-10T06:59:08Z",
          "url":{
@@ -332,6 +333,7 @@ Display page "2" of Editor's Picks
                     "full":"http:\/\/codepen.io\/HugoGiraudel\/full\/FBbDd",
                     "fullgrid":"http:\/\/codepen.io\/HugoGiraudel\/fullgrid\/FBbDd"
                 },
+                "hash":"FBbDd",
                 "user": {
                     "nickname":"HugoGiraudel",
                     "realname":"Hugo Giraudel",
@@ -394,6 +396,7 @@ The most popular pens.
                     "full":"http:\/\/codepen.io\/dylnhdsn\/full\/pheJs",
                     "fullgrid":"http:\/\/codepen.io\/dylnhdsn\/fullgrid\/pheJs"
                 },
+                "hash":"pheJs",
                 "user": {
                     "nickname":"dylnhdsn",
                     "realname":"dylnhdsn",
@@ -456,6 +459,7 @@ Recently added pens.
                     "full":"http:\/\/codepen.io\/chrisxclash\/full\/mzoHt",
                     "fullgrid":"http:\/\/codepen.io\/chrisxclash\/fullgrid\/mzoHt"
                 },
+                "hash":"mzoHt",
                 "user": {
                     "nickname":"chrisxclash",
                     "realname":"chrisxclash",
