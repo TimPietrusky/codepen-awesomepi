@@ -113,6 +113,12 @@ class NextGrid {
                 $url_fullgrid = $this->getValue($pens[$i], 'iframe[data-src]', NextGrid::VALUE_TYPE_ATTRIBUTE, 'data-src');
                 $this->output['pens'][$i]['url']['fullgrid'] = $this->processUrl($url_full);
 
+                // Hash
+                $url = $this->output['pens'][$i]['url']['pen'];
+                $path = parse_url($url, PHP_URL_PATH);
+                $segment = end(explode('/', rtrim($path, '/')));
+                $this->output['pens'][$i]['hash'] = $segment;
+
                 
                 /*
                  * home/* & user/love
