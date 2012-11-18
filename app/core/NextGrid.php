@@ -85,7 +85,7 @@ class NextGrid {
                 $this->output['pens'][$i]['title'] = $this->getValue($pens[$i], 'div[class="meta-overlay"] h2', NextGrid::VALUE_TYPE_PLAINTEXT);
 
                 // Description
-                $this->output['pens'][$i]['description'] = $this->getValue($pens[$i], 'div[class="meta-overlay] p', NextGrid::VALUE_TYPE_PLAINTEXT);
+                $this->output['pens'][$i]['description'] = $this->getValue($pens[$i], 'div[class="meta-overlay"] p', NextGrid::VALUE_TYPE_PLAINTEXT);
 
                 // Views
                 $this->output['pens'][$i]['views'] = $this->getValue($pens[$i], 'a[class="views"]', NextGrid::VALUE_TYPE_PLAINTEXT);
@@ -190,7 +190,11 @@ class NextGrid {
             }
 
             if ($type == NextGrid::VALUE_TYPE_PLAINTEXT) {
-                $value = $value[0]->plaintext;
+                if (empty($value[0]->plaintext) && isset($value[1])) {
+                    $value = $value[1]->plaintext;
+                } else {
+                    $value = $value[0]->plaintext;
+                }
             }
 
             $value = trim($value);
