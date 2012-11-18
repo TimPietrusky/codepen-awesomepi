@@ -92,6 +92,9 @@ class NextGrid {
 
                 // Hearts
                 $this->output['pens'][$i]['hearts'] = $this->getValue($pens[$i], 'span[class="count"]', NextGrid::VALUE_TYPE_PLAINTEXT);
+                if (empty($this->output['pens'][$i]['hearts'])) {
+                    $this->output['pens'][$i]['hearts'] = 0;
+                }
                 
                 // Comments
                 $this->output['pens'][$i]['comments'] = $this->getValue($pens[$i], 'a[class="comments"]', NextGrid::VALUE_TYPE_PLAINTEXT);
