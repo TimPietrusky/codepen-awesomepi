@@ -5,7 +5,7 @@ An unofficial API for [CodePen](http://codepen.io) made by a fan.
 This simple API parses the requested CodePen page with the [PHP Simple HTML DOM Parser](http://sourceforge.net/projects/simplehtmldom/)
 and returns JSON.
 
-2012 by http://timpietrusky.com
+2012 - 2013 by http://timpietrusky.com
 
 
 ## Basics
@@ -132,7 +132,7 @@ CodePens for a specific user.
         <td>String</td>
         <td>
             <ul>
-                <li>owned</li>
+                <li>public (<s>owned</s>)</li>
                 <li>loved</li>
                 <li>forked</li>
                 <li>pen</li>
@@ -153,13 +153,13 @@ CodePens for a specific user.
 
 #### Example
 
-Display page "1" of all "owned" pens of user "TimPietrusky"
+Display page "1" of all "public" pens of user "TimPietrusky"
 
-    http://codepen-awesomepi.timpietrusky.com/TimPietrusky/owned/1
+    http://codepen-awesomepi.timpietrusky.com/TimPietrusky/public/1
 
 If you don't specify the page, it's automatically set to "1"
 
-    http://codepen-awesomepi.timpietrusky.com/TimPietrusky/owned
+    http://codepen-awesomepi.timpietrusky.com/TimPietrusky/public
 
 ```javascript
 {
