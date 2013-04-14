@@ -37,7 +37,7 @@ class Pen {
 
         $content_html = curl_exec($ch);
         curl_close($ch);
-        
+
         if (!empty($content_html)) {
             // Create a DOM object from a string
             $this->html = str_get_html($content_html);
@@ -83,11 +83,11 @@ class Pen {
      * Get the source & tags of a specific pen.
      */
     protected function getPen() {
-        $content = $this->html->find('script', 3)->innertext; 
-        
+        $content = $this->html->find('script', 2)->innertext; 
+
         // Extract the content
         $content = split('__pen =', $content);
-        $content = split('; __tags =', $content[1]);
+        $content = split(';   __tags =', $content[1]);
 
         // HTML/CSS/JS
         $content_pen = $content[0];
