@@ -132,7 +132,7 @@ CodePens for a specific user.
         <td>String</td>
         <td>
             <ul>
-                <li>public (<s>owned</s>)</li>
+                <li>public (former <i>owned</i>)</li>
                 <li>loved</li>
                 <li>forked</li>
                 <li>pen</li>
