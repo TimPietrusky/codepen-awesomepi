@@ -14,6 +14,13 @@
 
 require_once "app/Master.php";
 
+/*
+if (isset($_REQUEST['test'])) {
+    require_once "app/core/Test.php";
+    die();
+}
+*/
+
 // Burn baby, burn
 Master::run();
 

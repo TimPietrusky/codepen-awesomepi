@@ -93,8 +93,22 @@ class Pen {
         $content_pen = $content[0];
         // Decode json
         $content_pen = json_decode($content_pen, true);
+
+        // Rename slug_hash into hash
+        if (isset($content_pen['slug_hash'])) {
+            $content_pen['hash'] = $content_pen['slug_hash'];
+        }
+
         // Remove unnecessary elements
-        unset($content_pen['id'], $content_pen['parent'], $content_pen['session_hash'], $content_pen['slug'], $content_pen['user_id']);
+        unset(
+            $content_pen['id'], 
+            $content_pen['parent'], 
+            $content_pen['session_hash'], 
+            $content_pen['slug'], 
+            $content_pen['slug_hash'],
+            $content_pen['slug_hash_private'],
+            $content_pen['user_id']
+        );
 
         // Tags
         $content_tags = split('; __user =', $content[1]);

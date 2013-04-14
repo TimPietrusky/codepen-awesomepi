@@ -183,7 +183,6 @@ class Request {
      */
     private function stripQueryString($uri) {
         $questionMarkPosition = strpos($uri, '?');
-
         if ($questionMarkPosition !== false) {
             return substr($uri, 0, $questionMarkPosition);
         }
