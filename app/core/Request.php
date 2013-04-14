@@ -56,9 +56,13 @@ class Request {
         if ($this->A != $type_none && !is_null($this->getB())) {
             // A is a username
             if ($this->getA() == $type_user) {
-                // B is one of the following: owned|love|details
+                // B is one of the following: owned|public|love|details
                 if (in_array($this->getB(), explode("|", Config::getConfig()->request_b_user))) {
-                    $this->B = $this->getB();
+                    if ($this->getB() == 'owned') {
+                        $this->B = 'public';
+                    } else {
+                        $this->B = $this->getB();
+                    }
                 } else {
                     $this->B = $type_none;
 
@@ -75,8 +79,8 @@ class Request {
 
             // 'user'
             if ($this->getA() == $type_user) {
-                // B is not set, so show the default "owned" #8
-                $this->B = 'owned';
+                // B is not set, so show the default "public" #8
+                $this->B = 'public';
                 $this->valid = true;
             }
 
