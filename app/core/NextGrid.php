@@ -50,7 +50,7 @@ class NextGrid {
 
         // Decode the delivered JSON
         $output = json_decode($content_json, true);
-        
+
         if (isset($output['html'])) {
             // Create a DOM object from a string
             $this->html = str_get_html($output['html']);

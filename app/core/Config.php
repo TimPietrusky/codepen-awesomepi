@@ -17,6 +17,8 @@ final class Config {
         'request_a' => 'picks|popular|recent',
         'request_b_user' => 'owned|love|loved|public|forked|pen|details',
         'request_b_specific' => 'pen|details',
+        'request_c_user' => 'list',
+        'request_d_user' => 'asc|desc',
 
         // Request types
         'type_user' => 'user',

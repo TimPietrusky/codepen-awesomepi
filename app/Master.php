@@ -56,6 +56,7 @@ class Master {
         $includes = array(
             'NextGrid',
             'Pen',
+            'PenList',
             'Request',
             'Response',
             'Config'
@@ -82,6 +83,9 @@ class Master {
                     if (in_array(self::$Request->getB(), explode("|", Config::getConfig()->request_b_specific))) {
                         $Pen = new Pen();
                         self::$Response->setResponse($Pen->getOutput());
+                    } else if (in_array(self::$Request->getC(), explode("|", Config::getConfig()->request_c_user))) {
+                        $PenList = new PenList();
+                        self::$Response->setResponse($PenList->getOutput());
                     } else {
                         $NextGrid = new NextGrid();
                         self::$Response->setResponse($NextGrid->getOutput());

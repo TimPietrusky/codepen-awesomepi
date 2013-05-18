@@ -20,6 +20,8 @@ class Request {
     protected $A;
     protected $B;
     protected $C;
+    protected $D;
+    protected $E;
 
     protected $valid = true;
 
@@ -37,7 +39,8 @@ class Request {
         $type_user = Config::getConfig()->type_user;
         $type_none = Config::getConfig()->type_none;
 
-        // Handle resource parts: http://api.tld/A/B/C
+        // Handle resource parts: http://api.tld/A/B/C/D/E
+
         // A
         if (!is_null($this->getA())) {
             // A is 'home' if one of the following matches: picks|popular|recent
@@ -101,6 +104,10 @@ class Request {
             } else if (strlen($this->getC()) == 5) {
                 $this->C = $this->getC();
 
+            // C is list
+            } else if (in_array($this->getC(), explode("|", Config::getConfig()->request_c_user))) {
+                $this->C = $this->getC();
+
             // C is invalid
             } else {
                 $this->C = $type_none;
@@ -121,6 +128,46 @@ class Request {
                     $this->C = 1;
                 }
             }
+        }
+
+        // D
+        if ($this->C != $type_none && !is_null($this->getD())) {
+             if (in_array($this->getD(), explode("|", Config::getConfig()->request_d_user))) {
+                $this->D = $this->getD();
+
+            // D is invalid
+            } else {
+                $this->D = $type_none;
+                $this->valid = false;
+            }
+        // D is not specified
+        } else {
+            // Default
+            if ($this->C == "list") {
+                $this->D = "desc";
+            } else {
+                $this->D = $type_none;
+            }
+        }
+
+        // E
+        if ($this->D != $type_none) {
+            // Set default value for E
+            if (is_null($this->getE())) {
+                $this->E = 1;
+            } else {
+                // E is an Integer
+                if (strval(intval($this->getE())) === strval($this->getE())) {
+                    $this->E = $this->getE();
+
+                // Set default value for E
+                } else {
+                    $this->E = 1;
+                }
+            }
+        // E is not specified
+        } else {
+            $this->E = $type_none;
         }
 
         // Track the request
@@ -150,6 +197,22 @@ class Request {
             return $this->C;
         } else {
             return $this->getResourcePart(3);
+        }
+    }
+
+    public function getD($raw = false) {
+        if (isset($this->D) && !$raw) {
+            return $this->D;
+        } else {
+            return $this->getResourcePart(4);
+        }
+    }
+
+    public function getE($raw = false) {
+        if (isset($this->E) && !$raw) {
+            return $this->E;
+        } else {
+            return $this->getResourcePart(5);
         }
     }
 
