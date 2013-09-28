@@ -140,6 +140,12 @@ class Pen {
 
         // URL - fullgrid
         $this->output['pen']['url']['fullgrid'] = Config::getConfig()->codepen . "/$this->username/fullgrid/$C";
+        
+        // URL - large image
+        $this->output['pen']['url']['large-img'] = Config::getConfig()->codepen . "/$this->username/pen/$C/image/large.png";
+        
+        // URL - small image
+        $this->output['pen']['url']['small-img'] = Config::getConfig()->codepen . "/$this->username/pen/$C/image/small.png";
     }
 }
 
