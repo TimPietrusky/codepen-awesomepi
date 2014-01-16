@@ -31,8 +31,6 @@ class NextGrid {
 
         $request_name = "showcase";
 
-        // http://codepen.io/TimPietrusky/next/showcase?page=1&popstateEvent=false&size=small&q=&selected_tag=&turn_off_js=false&m=false
-
         // user
         if (Master::$Request->getA() == Config::getConfig()->type_user) {
 
