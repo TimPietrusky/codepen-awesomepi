@@ -2,7 +2,10 @@
 
 /**
  * Handles the API-Request.
+ *
+ * 
  * https://github.com/TimPietrusky/codepen-awesomepi
+ *
  *
  * 2012 - 2014 by timpietrusky.com
  *

@@ -7,8 +7,11 @@ include_once('simplehtmldom/simple_html_dom.php');
  * parses it with the help of "PHP Simple HTML DOM Parser" (http://sourceforge.net/projects/simplehtmldom/)
  * and returns the output as an array.
  *
+ * 
+ * https://github.com/TimPietrusky/codepen-awesomepi
  *
- * 2012 by timpietrusky.com
+ *
+ * 2012 - 2014 by timpietrusky.com
  *
  * Licensed under VVL 1.33b7 - timpietrusky.com/license
  */

@@ -4,10 +4,12 @@ include_once('simplehtmldom/simple_html_dom.php');
 
 /**
  * Get the list of pens
+ *
  * 
  * https://github.com/TimPietrusky/codepen-awesomepi
  *
- * 2013- 2014 by timpietrusky.com
+ *
+ * 2012 - 2014 by timpietrusky.com
  *
  * Licensed under VVL 1.33b7 - timpietrusky.com/license
  */
