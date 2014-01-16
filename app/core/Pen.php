@@ -86,44 +86,53 @@ class Pen {
      * Get the source & tags of a specific pen.
      */
     protected function getPen() {
-        $content = $this->html->find('script', 2)->innertext; 
+
+        $content_css = $this->html->find('#box-css .code-box');
+        $content_js = $this->html->find('#box-js .code-box');
+        $content_html = $this->html->find('#box-html .code-box');
 
         // Extract the content
-        $content = split('__pen =', $content);
-        $content = split(';   __tags =', $content[1]);
+        // $content = split('__pen =', $content);
+        // $content = split(';   __tags =', $content[1]);
 
-        // HTML/CSS/JS
-        $content_pen = $content[0];
-        // Decode json
-        $content_pen = json_decode($content_pen, true);
+        // // HTML/CSS/JS
+        // $content_pen = $content[0];
+        // // Decode json
+        // $content_pen = json_decode($content_pen, true);
 
-        // Rename slug_hash into hash
-        if (isset($content_pen['slug_hash'])) {
-            $content_pen['hash'] = $content_pen['slug_hash'];
-        }
+        // // Rename slug_hash into hash
+        // if (isset($content_pen['slug_hash'])) {
+        //     $content_pen['hash'] = $content_pen['slug_hash'];
+        // }
 
-        // Remove unnecessary elements
-        unset(
-            $content_pen['id'], 
-            $content_pen['parent'], 
-            $content_pen['session_hash'], 
-            $content_pen['slug'], 
-            $content_pen['slug_hash'],
-            $content_pen['slug_hash_private'],
-            $content_pen['user_id']
-        );
+        // // Remove unnecessary elements
+        // unset(
+        //     $content_pen['id'], 
+        //     $content_pen['parent'], 
+        //     $content_pen['session_hash'], 
+        //     $content_pen['slug'], 
+        //     $content_pen['slug_hash'],
+        //     $content_pen['slug_hash_private'],
+        //     $content_pen['user_id']
+        // );
 
-        // Tags
-        $content_tags = split('; __user =', $content[1]);
-        $content_tags = trim($content_tags[0]);
-        $content_tags = str_replace(array('["', '"]'), '', $content_tags);
-        $content_tags = split('","', $content_tags);
+        // // Tags
+        // $content_tags = split('; __user =', $content[1]);
+        // $content_tags = trim($content_tags[0]);
+        // $content_tags = str_replace(array('["', '"]'), '', $content_tags);
+        // $content_tags = split('","', $content_tags);
 
-        // Add 'pen' to output
-        $this->output['pen'] = $content_pen;
+        // Add 'html' to output
+        $this->output['pen']['html'] = trim($content_html[0]->plaintext);
+
+        // Add 'html' to output
+        $this->output['pen']['css'] = trim($content_css[0]->plaintext);
+
+        // Add 'html' to output
+        $this->output['pen']['js'] = trim($content_js[0]->plaintext);
 
         // Add 'tags' to output
-        $this->output['tags'] = $content_tags;
+        $this->output['tags'] = Config::getConfig()->default_value_null;
     }
 
     protected function getDetails() {
