@@ -2,9 +2,9 @@
 
 /**
  * Handles the API-Request.
+ * https://github.com/TimPietrusky/codepen-awesomepi
  *
- *
- * 2012 by timpietrusky.com
+ * 2012 - 2014 by timpietrusky.com
  *
  * Licensed under VVL 1.33b7 - timpietrusky.com/license
  */

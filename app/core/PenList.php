@@ -3,9 +3,11 @@
 include_once('simplehtmldom/simple_html_dom.php');
 
 /**
+ * Get the list of pens
+ * 
+ * https://github.com/TimPietrusky/codepen-awesomepi
  *
- *
- * 2013 by timpietrusky.com
+ * 2013- 2014 by timpietrusky.com
  *
  * Licensed under VVL 1.33b7 - timpietrusky.com/license
  */
@@ -29,7 +31,15 @@ class PenList {
         // page
         $page = Master::$Request->getE();
 
-        $url = Config::getConfig()->codepen . "/$user/next_grid?type=$type&pen_grid_type=list&sort_order=$sort_order&page=$page&size=large";
+        // Desc request
+        $request_name = "public-list";
+
+        // Asc request
+        if ($sort_order == "asc") {
+            $request_name .= "-asc";
+        }
+
+        $url = Config::getConfig()->codepen . "/$user/next/$request_name?page=$page&size=large";
 
         // Get JSON from CodePen
         $ch = curl_init(); 

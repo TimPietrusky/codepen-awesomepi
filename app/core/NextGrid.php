@@ -8,7 +8,10 @@ include_once('simplehtmldom/simple_html_dom.php');
  * and returns the output as an array.
  *
  *
- * 2012 by timpietrusky.com
+ * https://github.com/TimPietrusky/codepen-awesomepi
+ *
+ *
+ * 2012 - 2014 by timpietrusky.com
  *
  * Licensed under VVL 1.33b7 - timpietrusky.com/license
  */
@@ -22,20 +25,31 @@ class NextGrid {
 
     function __construct() {
         $A = $this->getA();
+        $B = Master::$Request->getResourcePart(2);
         $page = $this->getPage();
         $url = "";
 
+        $request_name = "showcase";
+
+        // http://codepen.io/TimPietrusky/next/showcase?page=1&popstateEvent=false&size=small&q=&selected_tag=&turn_off_js=false&m=false
+
         // user
         if (Master::$Request->getA() == Config::getConfig()->type_user) {
+
+            // If it's the username + e.g. public, we change the request name
+            if (!empty($B)) {
+                $request_name = $B;
+            }
+
             $user_destination = $this->getUserDestination();
-            $url = Config::getConfig()->codepen . "/$A/next_grid?type=$user_destination&page=$page&size=large&pen_grid_type=grid";
+            $url = Config::getConfig()->codepen . "/$A/next/$request_name?page=$page&popstateEvent=false&size=large&selected_tag=&turn_off_js=false&m=false";
+
         // home
         } else {
             $type = Master::$Request->getResourcePart(1);
-            $url = Config::getConfig()->codepen . "/$A/next_grid?type=$type&page=$page&size=large&pen_grid_type=grid";
+            $url = Config::getConfig()->codepen . "/$A/next/$request_name?type=$type&page=$page&size=large&pen_grid_type=grid";
         }
 
-        // Get JSON from CodePen
         $ch = curl_init(); 
 
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -73,6 +87,7 @@ class NextGrid {
         // Get all pens
         $pens = $this->html->find('div[class="single-pen group"]');
         $pens_count = count($pens);
+
 
         // Has pens
         if ($pens_count > 0) {
@@ -143,7 +158,7 @@ class NextGrid {
                 }
             }
         }
-        
+
         return $this->output;
     }
 
