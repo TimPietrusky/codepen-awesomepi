@@ -83,7 +83,7 @@ class NextGrid {
      */
     public function getOutput() {
         // Get all pens
-        $pens = $this->html->find('div[class="single-pen group"]');
+        $pens = $this->html->find('div[class="single-pen"]');
         $pens_count = count($pens);
 
 
