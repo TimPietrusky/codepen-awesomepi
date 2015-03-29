@@ -5,7 +5,7 @@ An unofficial API for [CodePen](http://codepen.io) made by a fan.
 This simple API parses the requested CodePen page with the [PHP Simple HTML DOM Parser](http://sourceforge.net/projects/simplehtmldom/)
 and returns JSON.
 
-2012 - 2013 by http://timpietrusky.com
+2012 - 2015 by http://timpietrusky.com
 
 
 ## Basics
